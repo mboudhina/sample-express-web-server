@@ -40,7 +40,6 @@ app.use(express.static(_staticDirToServe));
 // use process's port if exists, else use 3000 (locally)
 const PORT = process.env.PORT || 3000;
 
-
 const templateHome = {
     title : 'Home',
     texte: 'Bienvenu dans mon Site Web'
@@ -48,6 +47,15 @@ const templateHome = {
 
 app.get('/', (res, rep)=>{
     rep.render('home.hbs', templateHome);
+});
+
+const templateProjects = {
+    title : 'Projets',
+    texte: 'Page dédiée pour les projets'
+};
+
+app.get('/projects', (res, rep)=>{
+    rep.render('projects.hbs', templateProjects);
 });
 
 app.get('/test', (res, rep)=>{
