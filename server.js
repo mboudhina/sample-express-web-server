@@ -38,7 +38,7 @@ const _staticDirToServe = path.join(__dirname,'public');
 app.use(express.static(_staticDirToServe));
 
 // use process's port if exists, else use 3000 (locally)
-const PORT = process.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 
 const templateHome = {
@@ -66,7 +66,7 @@ app.get('/about', (res, rep)=>{
 });
 
 app.listen(PORT, () => {
-    console.log("Server is up on port", PORT);
+    console.log(`Server is up on port ${PORT}`);
 });
 
 
