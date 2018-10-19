@@ -41,7 +41,7 @@ app.use(express.static(_staticDirToServe));
 const PORT = process.env.PORT || 3000;
 
 const templateHome = {
-    title : 'Home',
+    title : 'Home MBOUDHINA',
     texte: 'Bienvenu dans mon Site Web'
 };
 
